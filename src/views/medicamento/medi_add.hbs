@@ -1,0 +1,74 @@
+<div class="container" style="margin-top: 70px;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3 class="text-center text-uppercase p-3">Agregar Nuevo Medicamento</h3>
+
+            <form action="/medi_add" method="POST">
+                <div class="form-group mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese la descripción del medicamento" required>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="fechaFabricacion" class="form-label">Fecha de Fabricación</label>
+                    <input type="date" class="form-control" id="fechaFabricacion" name="fechaFabricacion" required>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="fechaVencimiento" class="form-label">Fecha de Vencimiento</label>
+                    <input type="date" class="form-control" id="fechaVencimiento" name="fechaVencimiento" required>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="presentacion" class="form-label">Presentación</label>
+                    <input type="text" class="form-control" id="presentacion" name="presentacion" placeholder="Ingrese la presentación (ej. Tabletas)" required>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="stock" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="stock" name="stock" placeholder="Ingrese la cantidad en stock" required min="0">
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="precioVentaUni" class="form-label">Precio Unitario</label>
+                    <input type="number" step="0.01" class="form-control" id="precioVentaUni" name="precioVentaUni" placeholder="Ingrese el precio unitario" required>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="precioVentaPres" class="form-label">Precio por Presentación</label>
+                    <input type="number" step="0.01" class="form-control" id="precioVentaPres" name="precioVentaPres" placeholder="Ingrese el precio por presentación" required>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="marca" class="form-label">Marca</label>
+                    <input type="text" class="form-control" id="marca" name="marca" placeholder="Ingrese la marca del medicamento" required>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="especialidad_id" class="form-label">Especialidad</label>
+                    <select class="form-control" id="especialidad_id" name="especialidad_id" required>
+                        <option value="">Seleccione una especialidad</option>
+                        {{#each especialidades}}
+                            <option value="{{this.id}}">{{this.descripcion}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="tipoMedic_id" class="form-label">Tipo de Medicamento</label>
+                    <select class="form-control" id="tipoMedic_id" name="tipoMedic_id" required>
+                        <option value="">Seleccione un tipo de medicamento</option>
+                        {{#each tiposMedicamento}}
+                            <option value="{{this.id}}">{{this.descripcion}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Agregar Medicamento</button>
+                    <a href="/medi_list" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

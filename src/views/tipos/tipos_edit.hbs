@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 70px;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center text-uppercase p-3">Editar Tipo</h3>
+
+            <form action="/tipos_edit/{{tipos.id}}" method="POST">
+            
+                <div class="form-group mb-3">
+                    <label for="descripcion" class="form-label">Descripción del Tipo</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{tipos.descripcion}}" required>
+                </div>
+                
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Actualizar Tipo</button>
+                    <a href="/tipos_list" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
